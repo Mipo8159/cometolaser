@@ -1,15 +1,17 @@
 import React from "react";
 import { IMiscCard } from "../../interfaces/misc-card.interface";
 import { Box, Typography } from "@mui/material";
+import UseMedia from "../../hooks/UseMedia";
 
-const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra }) => {
+const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra, mg }) => {
+  const { isMobile } = UseMedia();
   return (
-    <Box>
+    <Box marginRight={mg}>
       <Typography
         variant="h2"
         fontSize={18}
         color="#fff"
-        marginBottom={3}
+        marginBottom={isMobile ? 2 : 3}
         sx={{ textShadow: "none" }}
       >
         {initial}
@@ -19,7 +21,7 @@ const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra }) => {
         variant="h2"
         fontSize={18}
         color="#fff"
-        marginBottom={3}
+        marginBottom={isMobile ? 2 : 3}
         sx={{ textShadow: "none" }}
       >
         {body}
@@ -30,7 +32,7 @@ const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra }) => {
           variant="h2"
           fontSize={18}
           color="#fff"
-          marginBottom={3}
+          marginBottom={isMobile ? 2 : 3}
           sx={{ textShadow: "none" }}
         >
           {extra}

@@ -3,4 +3,5 @@ export interface IMiscCard {
   initial: string;
   body: string;
   extra?: string;
+  mg?: number;
 }

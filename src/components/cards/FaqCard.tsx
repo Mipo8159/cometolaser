@@ -1,19 +1,29 @@
 import React from "react";
 import { IFaq } from "../../interfaces/faq.interface";
 import { Box, Typography } from "@mui/material";
+import UseMedia from "../../hooks/UseMedia";
 
 const FaqCard: React.FC<IFaq> = ({ idx, question, answer }) => {
+  const { isMobile } = UseMedia();
   return (
     <Box
-      width={"500px"}
-      marginBottom={5}
-      sx={{ marginRight: idx! % 2 === 0 ? "-300px" : "300px" }}
+      width={isMobile ? "275px" : "500px"}
+      marginBottom={isMobile ? 3 : 5}
+      sx={{
+        marginRight: isMobile
+          ? idx! % 2 === 0
+            ? "-80px"
+            : "80px"
+          : idx! % 2 === 0
+          ? "-300px"
+          : "300px",
+      }}
     >
       <Typography
         variant="h2"
-        fontSize={100}
+        fontSize={isMobile ? 50 : 100}
         color="#000"
-        marginBottom={3}
+        marginBottom={isMobile ? 2 : 3}
         sx={{ textShadow: "none" }}
       >
         {`0${idx}`}
@@ -23,7 +33,7 @@ const FaqCard: React.FC<IFaq> = ({ idx, question, answer }) => {
         variant="h2"
         fontSize={18}
         color="#000"
-        marginBottom={3}
+        marginBottom={isMobile ? 2 : 3}
         sx={{ textShadow: "none" }}
       >
         {question}
@@ -33,7 +43,7 @@ const FaqCard: React.FC<IFaq> = ({ idx, question, answer }) => {
         variant="h2"
         fontSize={16}
         color="#000"
-        marginBottom={3}
+        marginBottom={isMobile ? 2 : 3}
         sx={{ textShadow: "none" }}
       >
         {answer}

@@ -3,6 +3,7 @@ import Quote from "../svg/Quote";
 import { Box, Typography } from "@mui/material";
 import { IReview } from "../../interfaces/review.interface";
 import ReviewCard from "../cards/ReviewCard";
+import UseMedia from "../../hooks/UseMedia";
 
 const reviews: IReview[] = [
   {
@@ -26,6 +27,7 @@ const reviews: IReview[] = [
 ];
 
 const Reviews: React.FC = () => {
+  const { isMobile, isTablet } = UseMedia();
   return (
     <Box
       display={"flex"}
@@ -45,10 +47,10 @@ const Reviews: React.FC = () => {
 
       <Box
         display={"flex"}
-        flexDirection={"row"}
+        flexDirection={!isMobile ? "row" : "column"}
         alignItems={"center"}
         justifyContent={"space-around"}
-        width={"80%"}
+        width={isTablet ? "100%" : "80%"}
       >
         {reviews.map(({ id, author, body, icon }: IReview) => (
           <ReviewCard key={id} body={body} author={author} icon={icon} />

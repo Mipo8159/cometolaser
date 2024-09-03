@@ -5,6 +5,7 @@ import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import "../../styles/video.css";
 import Header from "./Header";
+import UseMedia from "../../hooks/UseMedia";
 
 interface VideoPlayerProps {
   src: string;
@@ -18,6 +19,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   extra,
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { isMobile } = UseMedia();
   const [isPlaying, setIsPlaying] = useState<boolean>(autoPlay);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const [isHovered, setIsHovered] = useState<boolean>(false);
@@ -66,14 +68,16 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       <Header />
       {extra && (
         <Typography
-          fontSize={72}
+          fontSize={isMobile ? 32 : 62}
           style={{
             position: "absolute",
             color: "white",
-            top: "30%",
+            top: isMobile ? "150px" : "45%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             zIndex: 2,
+            width: "650px",
+            display: isMobile ? "none" : "block",
           }}
         >
           {extra}

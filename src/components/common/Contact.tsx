@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { IContactCard } from "../../interfaces/contact-card.interface";
 import ContactCard from "../cards/ContactCard";
+import UseMedia from "../../hooks/UseMedia";
 
 const contactList: IContactCard[] = [
   {
@@ -22,15 +23,16 @@ const contactList: IContactCard[] = [
 ];
 
 const Contact: React.FC = () => {
+  const { isTablet, isMobile } = UseMedia();
   return (
-    <Box marginBottom={8}>
+    <Box marginTop={isMobile ? -4 : 0} marginBottom={isMobile ? 2 : 8}>
       <Box
         display={"flex"}
         flexDirection={"row"}
         justifyContent={"center"}
         padding={5}
       >
-        <Box>
+        <Box display={isTablet || isMobile ? "none" : "block"}>
           <Typography
             variant="h2"
             fontSize={42}
@@ -44,7 +46,11 @@ const Contact: React.FC = () => {
       </Box>
 
       <Box display={"flex"} justifyContent={"center"}>
-        <Box width={"776px"} marginRight={6}>
+        <Box
+          width={"776px"}
+          marginRight={6}
+          display={isTablet || isMobile ? "none" : "block"}
+        >
           <img
             src={"/image/contact.webp"}
             alt={"/image/contact.webp"}

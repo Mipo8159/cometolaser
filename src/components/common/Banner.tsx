@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import UseMedia from "../../hooks/UseMedia";
 
 export interface IBannerProps {
   backgroundImage: string;
@@ -9,8 +10,10 @@ const Banner: React.FC<IBannerProps> = ({
   backgroundImage,
   skipText = false,
 }) => {
+  const { isMobile } = UseMedia();
   const bannerStyle: React.CSSProperties = {
     width: "100%",
+    height: isMobile && skipText ? "200px" : "auto",
     backgroundImage,
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -37,15 +40,15 @@ const Banner: React.FC<IBannerProps> = ({
           justifyContent: "center",
           textAlign: "center",
           position: "relative",
-          margin: "75px 0px 50px 0",
+          margin: isMobile ? "40px 0px 40px 0" : "75px 0px 50px 0",
           backgroundColor: "#fff",
         }}
       >
         {!skipText && (
           <Box
             sx={{
-              maxWidth: "450px",
-              width: "100%",
+              maxWidth: isMobile ? "70vw" : "450px",
+              width: isMobile ? "70vw" : "100%",
               padding: "50px 45px",
               backgroundColor: "#f0f0f0",
               borderRadius: "8px",
@@ -55,7 +58,7 @@ const Banner: React.FC<IBannerProps> = ({
               variant="h2"
               component="h1"
               gutterBottom
-              fontSize={56}
+              fontSize={isMobile ? 48 : 56}
               color="#000"
               sx={{ textShadow: "none" }}
             >

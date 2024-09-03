@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { IFaq } from "../../interfaces/faq.interface";
 import FaqCard from "../cards/FaqCard";
+import UseMedia from "../../hooks/UseMedia";
 
 const faqList: IFaq[] = [
   {
@@ -43,6 +44,7 @@ const faqList: IFaq[] = [
 ];
 
 const Faq: React.FC = () => {
+  const { isMobile } = UseMedia();
   return (
     <Box
       display={"flex"}
@@ -52,7 +54,7 @@ const Faq: React.FC = () => {
     >
       <Typography
         variant="h2"
-        fontSize={72}
+        fontSize={isMobile ? 60 : 72}
         color="#000"
         marginBottom={3}
         sx={{ textShadow: "none" }}

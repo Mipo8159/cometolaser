@@ -2,9 +2,11 @@ import { Box, Typography, Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowBackIosNew";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import UseMedia from "../../hooks/UseMedia";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
+  const { isMobile } = UseMedia();
 
   return (
     <Box
@@ -13,9 +15,8 @@ const Header: React.FC = () => {
         justifyContent: "space-between",
         alignItems: "center",
         position: "absolute",
-        top: "25px",
-        left: "10px",
-        width: "95%",
+        top: "10px",
+        width: isMobile ? "90%" : "95%",
         padding: "20px",
         borderRadius: "8px",
       }}
@@ -27,7 +28,12 @@ const Header: React.FC = () => {
         }}
         sx={{ cursor: "pointer" }}
       >
-        <Typography variant="h1" component="h1" color={"white"} fontSize={48}>
+        <Typography
+          variant="h1"
+          component="h1"
+          color={"white"}
+          fontSize={isMobile ? 22 : 42}
+        >
           COME TO LASER
         </Typography>
       </Box>
@@ -45,12 +51,16 @@ const Header: React.FC = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            padding: "8px 20px",
+            padding: isMobile ? "5px 8px" : "8px 20px",
             "&:hover": {
               border: "1px solid black",
             },
           }}
-          endIcon={<ArrowForwardIcon sx={{ transform: "rotate(180deg)" }} />}
+          endIcon={
+            !isMobile && (
+              <ArrowForwardIcon sx={{ transform: "rotate(180deg)" }} />
+            )
+          }
           onClick={(e) => {
             e.stopPropagation();
             navigate("/about");
@@ -66,12 +76,16 @@ const Header: React.FC = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            padding: "8px 20px",
+            padding: isMobile ? "5px 8px" : "8px 20px",
             "&:hover": {
               border: "1px solid black",
             },
           }}
-          endIcon={<ArrowForwardIcon sx={{ transform: "rotate(180deg)" }} />}
+          endIcon={
+            !isMobile && (
+              <ArrowForwardIcon sx={{ transform: "rotate(180deg)" }} />
+            )
+          }
           onClick={(e) => {
             e.stopPropagation();
             navigate("/contact");

@@ -1,16 +1,18 @@
 import React from "react";
 import { IReview } from "../../interfaces/review.interface";
 import { Box, Typography, Card, CardContent } from "@mui/material";
+import UseMedia from "../../hooks/UseMedia";
 
 const ReviewCard: React.FC<IReview> = ({ author, body, icon }) => {
+  const { isMobile } = UseMedia();
   return (
     <Card
       sx={{
-        maxWidth: 245,
+        maxWidth: isMobile ? 300 : 245,
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        padding: "16px",
+        padding: isMobile ? "8" : "16px",
         boxShadow: "none",
       }}
     >
