@@ -1,7 +1,13 @@
 export interface IMiscCard {
   id?: number;
-  initial: string;
-  body: string;
+  initial: {
+    head: string;
+    mobile: boolean;
+  };
+  body: {
+    head: string;
+    email: boolean;
+  };
   extra?: string;
   mg?: number;
 }

@@ -58,6 +58,8 @@ const Faq: React.FC = () => {
         color="#000"
         marginBottom={3}
         sx={{ textShadow: "none" }}
+        fontFamily={"montserrat"}
+        fontWeight={500}
       >
         FAQs
       </Typography>

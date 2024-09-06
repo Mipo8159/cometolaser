@@ -8,17 +8,25 @@ const contactList: IContactCard[] = [
   {
     id: 1,
     title: "Phone",
-    body: "1 (929) 603 - 7388",
+    body: {
+      head: "1 (929) 603 - 7388",
+      mobile: true,
+    },
   },
   {
     id: 2,
     title: "Email",
-    body: "ComeToLaser@gmail.com",
+    body: {
+      head: "ComeToLaser@gmail.com",
+      email: true,
+    },
   },
   {
     id: 3,
     title: "Location",
-    body: "34 E 67th StreetNew York, New York, 10065",
+    body: {
+      head: "34 E 67th StreetNew York, New York, 10065",
+    },
   },
 ];
 
@@ -39,6 +47,8 @@ const Contact: React.FC = () => {
             color="#000"
             marginBottom={3}
             sx={{ textShadow: "none" }}
+            fontFamily={"montserrat"}
+            fontWeight={500}
           >
             Contact us
           </Typography>
@@ -65,6 +75,8 @@ const Contact: React.FC = () => {
             color="#000"
             marginBottom={6}
             sx={{ textShadow: "none" }}
+            fontFamily={"montserrat"}
+            fontWeight={500}
           >
             Contact Information
           </Typography>

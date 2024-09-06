@@ -41,6 +41,8 @@ const Reviews: React.FC = () => {
         color="#000"
         marginBottom={3}
         sx={{ textShadow: "none" }}
+        fontFamily={"montserrat"}
+        fontWeight={500}
       >
         REVIEWS
       </Typography>

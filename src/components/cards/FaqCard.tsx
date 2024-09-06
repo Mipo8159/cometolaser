@@ -25,6 +25,8 @@ const FaqCard: React.FC<IFaq> = ({ idx, question, answer }) => {
         color="#000"
         marginBottom={isMobile ? 2 : 3}
         sx={{ textShadow: "none" }}
+        fontFamily={"montserrat"}
+        fontWeight={500}
       >
         {`0${idx}`}
       </Typography>
@@ -35,6 +37,8 @@ const FaqCard: React.FC<IFaq> = ({ idx, question, answer }) => {
         color="#000"
         marginBottom={isMobile ? 2 : 3}
         sx={{ textShadow: "none" }}
+        fontFamily={"montserrat"}
+        fontWeight={500}
       >
         {question}
       </Typography>
@@ -45,6 +49,8 @@ const FaqCard: React.FC<IFaq> = ({ idx, question, answer }) => {
         color="#000"
         marginBottom={isMobile ? 2 : 3}
         sx={{ textShadow: "none" }}
+        fontFamily={"montserrat"}
+        fontWeight={500}
       >
         {answer}
       </Typography>

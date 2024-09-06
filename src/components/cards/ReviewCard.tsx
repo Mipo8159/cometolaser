@@ -39,6 +39,8 @@ const ReviewCard: React.FC<IReview> = ({ author, body, icon }) => {
           color="#9D6200"
           gutterBottom
           sx={{ textShadow: "none", textAlign: "center" }}
+          fontFamily={"montserrat"}
+          fontWeight={500}
         >
           {body}
         </Typography>
@@ -47,6 +49,8 @@ const ReviewCard: React.FC<IReview> = ({ author, body, icon }) => {
           fontSize={15}
           color="#9D6200"
           sx={{ textShadow: "none", fontWeight: "bold", mt: 2 }}
+          fontFamily={"montserrat"}
+          fontWeight={500}
         >
           {author}
         </Typography>

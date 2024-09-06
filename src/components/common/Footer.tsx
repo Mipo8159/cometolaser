@@ -7,18 +7,36 @@ import UseMedia from "../../hooks/UseMedia";
 const footerContacts: IMiscCard[] = [
   {
     id: 1,
-    initial: "1 (929) 603 - 7388",
-    body: "ComeToLaser@gmail.com",
+    initial: {
+      head: "1 (929) 603 - 7388",
+      mobile: true,
+    },
+    body: {
+      head: "ComeToLaser@gmail.com",
+      email: true,
+    },
   },
   {
     id: 2,
-    initial: "34 E 67th Street",
-    body: "New York, New York, 10065",
+    initial: {
+      head: "34 E 67th Street",
+      mobile: false,
+    },
+    body: {
+      head: "New York, New York, 10065",
+      email: false,
+    },
   },
   {
     id: 3,
-    initial: "Mon - Fri: 9am - 6pm",
-    body: "​​Saturday: 9am - 6pm",
+    initial: {
+      head: "Mon - Fri: 9am - 6pm",
+      mobile: false,
+    },
+    body: {
+      head: "​​Saturday: 9am - 6pm",
+      email: false,
+    },
     extra: "​Sunday: Closed",
   },
 ];
@@ -40,6 +58,8 @@ const Footer: React.FC = () => {
         color="#fff"
         marginBottom={isMobile ? 5 : 8}
         sx={{ textShadow: "none" }}
+        fontFamily={"montserrat"}
+        fontWeight={500}
       >
         Where to Find Us
       </Typography>

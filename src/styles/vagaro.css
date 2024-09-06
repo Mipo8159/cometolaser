@@ -1,0 +1,27 @@
+.vagaro {
+  color: black;
+  background: white;
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 3px;
+  font-family: montserrat;
+  font-weight: 600;
+}
+
+.btn-hover:hover {
+  border: 1px solid black;
+}
+
+@media (max-width: 576px) {
+  .vagaro-header {
+    display: none;
+  }
+  .vagaro {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+  }
+}

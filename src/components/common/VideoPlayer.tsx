@@ -6,6 +6,8 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import "../../styles/video.css";
 import Header from "./Header";
 import UseMedia from "../../hooks/UseMedia";
+import ArrowForwardIcon from "@mui/icons-material/ArrowBackIosNew";
+import "../../styles/vagaro.css";
 
 interface VideoPlayerProps {
   src: string;
@@ -76,13 +78,33 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             left: "50%",
             transform: "translate(-50%, -50%)",
             zIndex: 2,
-            width: "650px",
+            width: "700px",
             display: isMobile ? "none" : "block",
+            fontFamily: "montserrat",
+            fontWeight: "500",
           }}
         >
           {extra}
         </Typography>
       )}
+
+      <a
+        href="https://www.vagaro.com//Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVBh1+AlsgZbN43U0IWetNqJ2tsFz33AN0AtcX/kaTbKxySdGKTrNIp+tEw+2riuHn9sUKnegykTdg2uWGlD56lYcdT+fezA9y6wRHn6e2Y+ybzJDt7JGI1L5wb+qBN3gR6VDem0UkWUUrHltt8sljDMv+qckAXfnN3rAOjknL20SyU2BoYoC34XG0MDA6uvmnE3oP+Wfxnp58Pp7FDSVmCCdBZsyFC753jlgHYrVoZp78mz2I0IqUiSx7P0QHrpFZ9w6cf6KxLVCIle9JxxgUc1+hFFGhZWLyKOgv0Z9InaLIy8JUq+PMUwmBCrdbgxwJ9t8fSVdyKCD6dVP285mRRtHeq+WtHEb6tdDF3O/ySgFLDL0E/IsEAs6tFJd58RtRgfb1YNGl5nNznxe1XU1/rcPrCu/n56etB75aofTzHdRh/GtyDZk9NYaKSGMkadMPg=="
+        target="_blank"
+        rel="noopener noreferrer"
+        className="vagaro btn-hover vagaro-video"
+        style={{
+          padding: isMobile ? "10px 12px" : "8px 20px",
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        Book Now
+        {!isMobile && (
+          <ArrowForwardIcon
+            style={{ transform: "rotate(180deg)", marginLeft: "8px" }}
+          />
+        )}
+      </a>
 
       {isHovered && (
         <>

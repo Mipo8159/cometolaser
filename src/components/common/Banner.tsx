@@ -61,6 +61,8 @@ const Banner: React.FC<IBannerProps> = ({
               fontSize={isMobile ? 48 : 56}
               color="#000"
               sx={{ textShadow: "none" }}
+              fontFamily={"montserrat"}
+              fontWeight={500}
             >
               WELCOME!
             </Typography>
@@ -69,6 +71,8 @@ const Banner: React.FC<IBannerProps> = ({
               fontSize={18}
               color="#000"
               sx={{ textShadow: "none" }}
+              fontFamily={"montserrat"}
+              fontWeight={500}
             >
               Discover effortless, year-round hair removal with our Alma's
               cutting-edge technology, last edition FIRST IN NEW YORK, designed
