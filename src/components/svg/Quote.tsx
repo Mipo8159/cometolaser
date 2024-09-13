@@ -15,7 +15,7 @@ const Quote: React.FC = () => {
       <defs>
         <style>
           {`
-            .fillColor { fill: #9D6200; }
+            .fillColor { fill: #000; }
           `}
         </style>
       </defs>

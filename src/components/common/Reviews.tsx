@@ -37,7 +37,7 @@ const Reviews: React.FC = () => {
     >
       <Typography
         variant="h2"
-        fontSize={20}
+        fontSize={24}
         color="#000"
         marginBottom={3}
         sx={{ textShadow: "none" }}

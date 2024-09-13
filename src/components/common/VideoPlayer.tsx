@@ -6,7 +6,6 @@ import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import "../../styles/video.css";
 import Header from "./Header";
 import UseMedia from "../../hooks/UseMedia";
-import ArrowForwardIcon from "@mui/icons-material/ArrowBackIosNew";
 import "../../styles/vagaro.css";
 
 interface VideoPlayerProps {
@@ -70,7 +69,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       <Header />
       {extra && (
         <Typography
-          fontSize={isMobile ? 32 : 62}
+          fontSize={isMobile ? 32 : 56}
           style={{
             position: "absolute",
             color: "white",
@@ -87,7 +86,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           {extra}
         </Typography>
       )}
-
+      {/* 
       <a
         href="https://www.vagaro.com//Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVBh1+AlsgZbN43U0IWetNqJ2tsFz33AN0AtcX/kaTbKxySdGKTrNIp+tEw+2riuHn9sUKnegykTdg2uWGlD56lYcdT+fezA9y6wRHn6e2Y+ybzJDt7JGI1L5wb+qBN3gR6VDem0UkWUUrHltt8sljDMv+qckAXfnN3rAOjknL20SyU2BoYoC34XG0MDA6uvmnE3oP+Wfxnp58Pp7FDSVmCCdBZsyFC753jlgHYrVoZp78mz2I0IqUiSx7P0QHrpFZ9w6cf6KxLVCIle9JxxgUc1+hFFGhZWLyKOgv0Z9InaLIy8JUq+PMUwmBCrdbgxwJ9t8fSVdyKCD6dVP285mRRtHeq+WtHEb6tdDF3O/ySgFLDL0E/IsEAs6tFJd58RtRgfb1YNGl5nNznxe1XU1/rcPrCu/n56etB75aofTzHdRh/GtyDZk9NYaKSGMkadMPg=="
         target="_blank"
@@ -104,7 +103,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             style={{ transform: "rotate(180deg)", marginLeft: "8px" }}
           />
         )}
-      </a>
+      </a> */}
 
       {isHovered && (
         <>
@@ -118,12 +117,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
                 transform: "translate(-50%, -50%)",
                 color: "white",
                 backgroundColor: "rgba(0, 0, 0, 0.5)",
-                padding: "20px",
+                padding: "12px",
                 borderRadius: "50%",
               }}
               aria-label="play/pause"
             >
-              <PlayArrowIcon fontSize="large" />
+              <PlayArrowIcon fontSize={isMobile ? "medium" : "large"} />
             </IconButton>
           )}
 
@@ -141,9 +140,9 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
             aria-label="mute/unmute"
           >
             {isMuted ? (
-              <VolumeOffIcon fontSize="large" />
+              <VolumeOffIcon fontSize={isMobile ? "small" : "large"} />
             ) : (
-              <VolumeUpIcon fontSize="large" />
+              <VolumeUpIcon fontSize={isMobile ? "small" : "large"} />
             )}
           </IconButton>
         </>

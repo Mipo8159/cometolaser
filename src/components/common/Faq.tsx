@@ -51,6 +51,7 @@ const Faq: React.FC = () => {
       flexDirection={"column"}
       alignItems={"center"}
       padding={6}
+      paddingX={5}
     >
       <Typography
         variant="h2"

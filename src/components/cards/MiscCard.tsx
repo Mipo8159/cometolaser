@@ -3,16 +3,16 @@ import { IMiscCard } from "../../interfaces/misc-card.interface";
 import { Box, Typography } from "@mui/material";
 import UseMedia from "../../hooks/UseMedia";
 
-const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra, mg }) => {
+const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra }) => {
   const { isMobile } = UseMedia();
   return (
-    <Box marginRight={mg}>
+    <Box marginBottom={isMobile ? 4 : 1}>
       {initial.mobile ? (
         <a
           href={`tel:${initial.head}`}
           style={{
             color: "#fff",
-            fontSize: "18px",
+            fontSize: isMobile ? "16" : "18px",
             marginBottom: isMobile ? "15px" : "22px",
             display: "block",
             fontFamily: "montserrat",
@@ -24,7 +24,7 @@ const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra, mg }) => {
       ) : (
         <Typography
           variant="h2"
-          fontSize={18}
+          fontSize={isMobile ? 16 : 18}
           color="#fff"
           marginBottom={isMobile ? 2 : 3}
           fontFamily={"montserrat"}
@@ -40,7 +40,7 @@ const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra, mg }) => {
           href={`mailto:${body.head}`}
           style={{
             color: "#fff",
-            fontSize: "18px",
+            fontSize: isMobile ? "16px" : "18px",
             marginBottom: isMobile ? "15px" : "22px",
             display: "block",
             fontFamily: "montserrat",
@@ -52,7 +52,7 @@ const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra, mg }) => {
       ) : (
         <Typography
           variant="h2"
-          fontSize={18}
+          fontSize={isMobile ? 16 : 18}
           color="#fff"
           marginBottom={isMobile ? 2 : 3}
           fontFamily={"montserrat"}
@@ -66,7 +66,7 @@ const MiscCard: React.FC<IMiscCard> = ({ initial, body, extra, mg }) => {
       {extra && (
         <Typography
           variant="h2"
-          fontSize={18}
+          fontSize={isMobile ? 16 : 18}
           color="#fff"
           fontFamily={"montserrat"}
           fontWeight={500}

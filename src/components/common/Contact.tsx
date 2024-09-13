@@ -33,7 +33,11 @@ const contactList: IContactCard[] = [
 const Contact: React.FC = () => {
   const { isTablet, isMobile } = UseMedia();
   return (
-    <Box marginTop={isMobile ? -4 : 0} marginBottom={isMobile ? 2 : 8}>
+    <Box
+      marginTop={isMobile ? -4 : 0}
+      marginBottom={isMobile ? 2 : 8}
+      paddingX={2}
+    >
       <Box
         display={"flex"}
         flexDirection={"row"}
@@ -71,9 +75,10 @@ const Contact: React.FC = () => {
         <Box display={"flex"} flexDirection={"column"}>
           <Typography
             variant="h2"
-            fontSize={36}
+            fontSize={isMobile ? 28 : 36}
             color="#000"
-            marginBottom={6}
+            marginBottom={isMobile ? 3 : 6}
+            marginTop={isMobile ? -2 : "auto"}
             sx={{ textShadow: "none" }}
             fontFamily={"montserrat"}
             fontWeight={500}

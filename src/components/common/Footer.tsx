@@ -50,13 +50,13 @@ const Footer: React.FC = () => {
       alignItems={isMobile || isTablet ? "center" : "flex-start"}
       sx={{ background: "#000" }}
       paddingX={isMobile ? 0 : 8}
-      paddingY={isMobile ? 5 : 8}
+      paddingY={isMobile ? 4 : 8}
     >
       <Typography
         variant="h2"
-        fontSize={isMobile ? 34 : 56}
+        fontSize={isMobile ? 28 : 56}
         color="#fff"
-        marginBottom={isMobile ? 5 : 8}
+        marginBottom={isMobile ? 4 : 8}
         sx={{ textShadow: "none" }}
         fontFamily={"montserrat"}
         fontWeight={500}
@@ -65,11 +65,11 @@ const Footer: React.FC = () => {
       </Typography>
 
       <Box
-        display={"flex"}
+        display={isMobile ? "block" : "flex"}
         flexDirection={!isMobile ? "row" : "column"}
         alignItems={isMobile || isTablet ? "center" : "flex-start"}
         justifyContent={"space-between"}
-        width={"100%"}
+        width={isMobile ? "auto" : "100%"}
       >
         {footerContacts.map(({ id, initial, body, extra }: IMiscCard, idx) => (
           <MiscCard

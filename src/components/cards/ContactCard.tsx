@@ -9,7 +9,7 @@ const ContactCard: React.FC<IContactCard> = ({ title, body }) => {
     <Box marginBottom={3}>
       <Typography
         variant="h2"
-        fontSize={25}
+        fontSize={isMobile ? 20 : 25}
         color="#000"
         marginBottom={2}
         fontFamily={"montserrat"}
@@ -24,7 +24,7 @@ const ContactCard: React.FC<IContactCard> = ({ title, body }) => {
           href={`tel:${body.head}`}
           style={{
             color: "#000",
-            fontSize: "18px",
+            fontSize: isMobile ? "15" : "18px",
             marginBottom: isMobile ? "15px" : "22px",
             display: "block",
             fontFamily: "montserrat",
@@ -38,7 +38,7 @@ const ContactCard: React.FC<IContactCard> = ({ title, body }) => {
           href={`mailto:${body.head}`}
           style={{
             color: "#000",
-            fontSize: "18px",
+            fontSize: isMobile ? "15" : "18px",
             marginBottom: isMobile ? "15px" : "22px",
             display: "block",
             fontFamily: "montserrat",
@@ -50,7 +50,7 @@ const ContactCard: React.FC<IContactCard> = ({ title, body }) => {
       ) : (
         <Typography
           variant="h2"
-          fontSize={18}
+          fontSize={isMobile ? 15 : 18}
           color="#000"
           marginBottom={3}
           fontFamily={"montserrat"}

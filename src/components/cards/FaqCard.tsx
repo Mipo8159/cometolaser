@@ -12,8 +12,8 @@ const FaqCard: React.FC<IFaq> = ({ idx, question, answer }) => {
       sx={{
         marginRight: isMobile
           ? idx! % 2 === 0
-            ? "-80px"
-            : "80px"
+            ? "-40px"
+            : "40px"
           : idx! % 2 === 0
           ? "-300px"
           : "300px",

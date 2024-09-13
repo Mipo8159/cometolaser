@@ -14,11 +14,11 @@ const Header: React.FC = () => {
       sx={{
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: isMobile ? "start" : "center",
         position: "absolute",
-        top: "10px",
-        width: isMobile ? "90%" : "95%",
-        padding: "20px",
+        top: isMobile ? "5px" : "10px",
+        width: isMobile ? "95%" : "95%",
+        padding: isMobile ? "10px" : "12px 18px",
         borderRadius: "8px",
       }}
     >
@@ -35,8 +35,10 @@ const Header: React.FC = () => {
           component="h1"
           color={"white"}
           fontSize={isMobile ? 25 : 42}
-          fontFamily={"montserrat"}
+          fontFamily={"Bebas Neue"}
           fontWeight={600}
+          letterSpacing={4}
+          width={isMobile ? 75 : "auto"}
         >
           COME TO LASER
         </Typography>
@@ -44,7 +46,7 @@ const Header: React.FC = () => {
       <Box
         sx={{
           display: "flex",
-          gap: "20px",
+          gap: isMobile ? "12px" : "20px",
         }}
       >
         <Button
@@ -56,7 +58,7 @@ const Header: React.FC = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            padding: isMobile ? "5px 8px" : "8px 20px",
+            padding: isMobile ? "5px 8px" : "8px 16px",
             fontFamily: "montserrat",
             fontWeight: "600",
             "&:hover": {
@@ -65,7 +67,12 @@ const Header: React.FC = () => {
           }}
           endIcon={
             !isMobile && (
-              <ArrowForwardIcon sx={{ transform: "rotate(180deg)" }} />
+              <ArrowForwardIcon
+                sx={{
+                  transform: "rotate(180deg)",
+                  width: "12px",
+                }}
+              />
             )
           }
           onClick={(e) => {
@@ -73,7 +80,9 @@ const Header: React.FC = () => {
             navigate("/about");
           }}
         >
-          About Us
+          <Typography fontWeight={500} fontFamily={"montserrat"} fontSize={15}>
+            ABOUT
+          </Typography>
         </Button>
         <Button
           className="btn-hover"
@@ -84,13 +93,17 @@ const Header: React.FC = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            padding: isMobile ? "5px 8px" : "8px 20px",
+            padding: isMobile ? "5px 8px" : "8px 16px",
             fontFamily: "montserrat",
-            fontWeight: "600",
           }}
           endIcon={
             !isMobile && (
-              <ArrowForwardIcon sx={{ transform: "rotate(180deg)" }} />
+              <ArrowForwardIcon
+                sx={{
+                  transform: "rotate(180deg)",
+                  width: "12px",
+                }}
+              />
             )
           }
           onClick={(e) => {
@@ -98,22 +111,30 @@ const Header: React.FC = () => {
             navigate("/contact");
           }}
         >
-          Contact
+          <Typography fontWeight={500} fontFamily={"montserrat"} fontSize={15}>
+            CONTACT
+          </Typography>
         </Button>
 
         <a
           href="https://www.vagaro.com//Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVBh1+AlsgZbN43U0IWetNqJ2tsFz33AN0AtcX/kaTbKxySdGKTrNIp+tEw+2riuHn9sUKnegykTdg2uWGlD56lYcdT+fezA9y6wRHn6e2Y+ybzJDt7JGI1L5wb+qBN3gR6VDem0UkWUUrHltt8sljDMv+qckAXfnN3rAOjknL20SyU2BoYoC34XG0MDA6uvmnE3oP+Wfxnp58Pp7FDSVmCCdBZsyFC753jlgHYrVoZp78mz2I0IqUiSx7P0QHrpFZ9w6cf6KxLVCIle9JxxgUc1+hFFGhZWLyKOgv0Z9InaLIy8JUq+PMUwmBCrdbgxwJ9t8fSVdyKCD6dVP285mRRtHeq+WtHEb6tdDF3O/ySgFLDL0E/IsEAs6tFJd58RtRgfb1YNGl5nNznxe1XU1/rcPrCu/n56etB75aofTzHdRh/GtyDZk9NYaKSGMkadMPg=="
           target="_blank"
           rel="noopener noreferrer"
-          className="vagaro btn-hover vagaro-header"
+          className="vagaro btn-hover"
           style={{
-            padding: isMobile ? "5px 8px" : "8px 20px",
+            padding: isMobile ? "5px 8px" : "8px 16px",
           }}
         >
-          Book Now
+          <Typography fontWeight={500} fontFamily={"montserrat"} fontSize={15}>
+            BOOK
+          </Typography>
           {!isMobile && (
             <ArrowForwardIcon
-              style={{ transform: "rotate(180deg)", marginLeft: "8px" }}
+              style={{
+                transform: "rotate(180deg)",
+                marginLeft: "6px",
+                width: "12px",
+              }}
             />
           )}
         </a>

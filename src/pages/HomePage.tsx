@@ -9,9 +9,9 @@ const HomePage: React.FC = () => {
   return (
     <Box>
       <VideoPlayer
-        src="/video/main.mp4"
+        src="/video/main.MP4"
         autoPlay={true}
-        extra="FIRST IN NEW YORK"
+        extra="FIRST IN NEW YORK@"
       />
       <Banner backgroundImage="url(/image/banner.png)" />
       <Reviews />

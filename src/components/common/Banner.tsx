@@ -49,7 +49,7 @@ const Banner: React.FC<IBannerProps> = ({
             sx={{
               maxWidth: isMobile ? "70vw" : "450px",
               width: isMobile ? "70vw" : "100%",
-              padding: "50px 45px",
+              padding: isMobile ? "30px 35px" : "50px 45px",
               backgroundColor: "#f0f0f0",
               borderRadius: "8px",
             }}
@@ -57,8 +57,8 @@ const Banner: React.FC<IBannerProps> = ({
             <Typography
               variant="h2"
               component="h1"
-              gutterBottom
-              fontSize={isMobile ? 48 : 56}
+              marginBottom={2.5}
+              fontSize={isMobile ? 38 : 56}
               color="#000"
               sx={{ textShadow: "none" }}
               fontFamily={"montserrat"}
@@ -74,17 +74,13 @@ const Banner: React.FC<IBannerProps> = ({
               fontFamily={"montserrat"}
               fontWeight={500}
             >
-              Discover effortless, year-round hair removal with our Alma's
-              cutting-edge technology, last edition FIRST IN NEW YORK, designed
-              for all skin and hair types, including tanned skin! Our advanced
-              system combines three wavelengths with superior cooling and SHR
-              technology to ensure safe, comfortable treatments. Choose from
-              three versatile modes: SHR in motion for fast, large-area hair
-              removal, SHR STACK for precise treatment on smaller areas like the
-              face and bikini line, or HR classic for targeted pulses. Alma's
-              SHR™ technology stands out as the only clinically-proven,
-              virtually painless method, offering effective results with gradual
-              heating and robust cooling for all skin types.
+              Effectively treat all skin and hair types with Soprano Titanium’s
+              all-in-one Trio handpiece that combines three of the most
+              clinically validated laser hair removal wavelengths – 755nm, 810nm
+              and 1064nm. Combined with Soprano’s one-of-a-kind ICE Plus
+              technology, Soprano Titanium™️ allows for a quicker and more
+              comfortable hair removal experience that both providers and
+              patients will enjoy.
             </Typography>
           </Box>
         )}

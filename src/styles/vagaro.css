@@ -11,17 +11,22 @@
   font-weight: 600;
 }
 
+.vagaro-video {
+  display: none;
+}
+
 .btn-hover:hover {
   border: 1px solid black;
 }
 
 @media (max-width: 576px) {
-  .vagaro-header {
-    display: none;
-  }
-  .vagaro {
+  /* .vagaro {
     position: absolute;
     bottom: 20px;
     left: 15px;
+  } */
+
+  .vagaro-video {
+    display: block;
   }
 }

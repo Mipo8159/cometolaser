@@ -28,7 +28,6 @@ const ReviewCard: React.FC<IReview> = ({ author, body, icon }) => {
             width: "100%",
             display: "flex",
             justifyContent: "center",
-            mb: 2,
           }}
         >
           {icon && <Box sx={{ fontSize: 60 }}>{icon}</Box>}
@@ -36,8 +35,7 @@ const ReviewCard: React.FC<IReview> = ({ author, body, icon }) => {
         <Typography
           variant="body2"
           fontSize={14}
-          color="#9D6200"
-          gutterBottom
+          color="#000"
           sx={{ textShadow: "none", textAlign: "center" }}
           fontFamily={"montserrat"}
           fontWeight={500}
@@ -47,7 +45,7 @@ const ReviewCard: React.FC<IReview> = ({ author, body, icon }) => {
         <Typography
           variant="body1"
           fontSize={15}
-          color="#9D6200"
+          color="#000"
           sx={{ textShadow: "none", fontWeight: "bold", mt: 2 }}
           fontFamily={"montserrat"}
           fontWeight={500}
