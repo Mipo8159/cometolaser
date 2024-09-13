@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
       <VideoPlayer
         src="/video/main.MP4"
         autoPlay={true}
-        extra="FIRST IN NEW YORK@"
+        extra="FIRST IN NEW YORK@2"
       />
       <Banner backgroundImage="url(/image/banner.png)" />
       <Reviews />
