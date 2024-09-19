@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import UseMedia from "../../hooks/UseMedia";
 
 export interface IBannerProps {
-  backgroundImage: string;
+  backgroundImage?: string;
   skipText?: boolean;
 }
 const Banner: React.FC<IBannerProps> = ({
@@ -27,6 +27,7 @@ const Banner: React.FC<IBannerProps> = ({
     textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
     marginTop: "-2px",
     position: "relative",
+    borderBottom: "1px solid lightgray",
   };
 
   return (
@@ -40,7 +41,7 @@ const Banner: React.FC<IBannerProps> = ({
           justifyContent: "center",
           textAlign: "center",
           position: "relative",
-          margin: isMobile ? "40px 0px 40px 0" : "75px 0px 50px 0",
+          margin: isMobile ? "40px 0px 50px 0" : "65px 0px 75px 0",
           backgroundColor: "#fff",
         }}
       >

@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
         autoPlay={true}
         extra="FIRST IN NEW YORK"
       />
-      <Banner backgroundImage="url(/image/banner.png)" />
+      <Banner />
       <Reviews />
       <Footer />
     </Box>

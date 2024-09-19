@@ -19,14 +19,41 @@
   border: 1px solid black;
 }
 
-@media (max-width: 576px) {
-  /* .vagaro {
-    position: absolute;
-    bottom: 20px;
-    left: 15px;
-  } */
+.btn-footer {
+  width: 200px;
+  height: 35px;
+  margin-top: 6px;
+}
 
+.certified {
+  height: 1000px;
+  overflow: hidden;
+  margin-bottom: 45px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .certified {
+    height: 700px;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+}
+
+@media (max-width: 576px) {
   .vagaro-video {
     display: block;
+  }
+  .certified {
+    height: 500px;
+    background-size: cover;
+    background-position: 50% 75%;
+  }
+  .btn-footer {
+    margin-top: -10px;
+    margin-bottom: 30px;
+    width: 275px;
   }
 }
