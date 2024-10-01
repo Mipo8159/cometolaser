@@ -14,6 +14,12 @@ const HomePage: React.FC = () => {
         extra="FIRST IN NEW YORK"
       />
       <Banner />
+      <VideoPlayer
+        src="/video/intro.mp4"
+        autoPlay={true}
+        videoOnly
+        styles={{ height: "800px" }}
+      />
       <Reviews />
       <Footer />
     </Box>

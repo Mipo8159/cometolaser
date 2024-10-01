@@ -3,6 +3,7 @@ import React from "react";
 import { IContactCard } from "../../interfaces/contact-card.interface";
 import ContactCard from "../cards/ContactCard";
 import UseMedia from "../../hooks/UseMedia";
+import VideoPlayer from "./VideoPlayer";
 
 const contactList: IContactCard[] = [
   {
@@ -65,10 +66,11 @@ const Contact: React.FC = () => {
           marginRight={6}
           display={isTablet || isMobile ? "none" : "block"}
         >
-          <img
-            src={"/image/contact.webp"}
-            alt={"/image/contact.webp"}
-            style={{ width: "100%" }}
+          <VideoPlayer
+            src="/video/contact-us.mp4"
+            autoPlay={true}
+            videoOnly
+            styles={{ height: "475px" }}
           />
         </Box>
 

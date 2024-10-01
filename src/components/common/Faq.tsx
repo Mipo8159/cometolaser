@@ -41,6 +41,11 @@ const faqList: IFaq[] = [
     answer:
       "Depending on the patient's skin and hair type, results are typically seen following 6 to 8 treatment sessions.",
   },
+  {
+    id: 7,
+    question: "Are you Original/certified?",
+    answer: "Yes our machine is original and certified form Israel.",
+  },
 ];
 
 const Faq: React.FC = () => {

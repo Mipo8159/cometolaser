@@ -12,12 +12,16 @@ interface VideoPlayerProps {
   src: string;
   autoPlay?: boolean;
   extra?: string;
+  videoOnly?: boolean;
+  styles?: Record<string, string>;
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({
   src,
   autoPlay = false,
   extra,
+  videoOnly = false,
+  styles = {},
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const { isMobile } = UseMedia();
@@ -53,6 +57,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   return (
     <div
       className="video-container"
+      style={styles}
       onClick={togglePlay}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -63,11 +68,12 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         controls={false}
         autoPlay={true}
         loop={true}
+        playsInline={true}
       >
         <source src={src} type="video/mp4" />
       </video>
 
-      <Header />
+      {!videoOnly && <Header />}
       {extra && (
         <Typography
           fontSize={isMobile ? 32 : 56}
