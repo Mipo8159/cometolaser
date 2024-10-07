@@ -4,8 +4,11 @@ import Banner from "../components/common/Banner";
 import Reviews from "../components/common/Reviews";
 import Footer from "../components/common/Footer";
 import { Box } from "@mui/material";
+import useTrackPageView from "../hooks/useTrackPage";
 
 const HomePage: React.FC = () => {
+  useTrackPageView();
+
   return (
     <Box>
       <VideoPlayer
