@@ -5,9 +5,12 @@ const useTrackPageView = () => {
   const location = useLocation();
 
   useEffect(() => {
-    if (window.gtag) {
-      window.gtag("config", "AW-16681060130", {
-        page_path: location.pathname,
+    const pagePath = location.pathname;
+
+    if (window.dataLayer && pagePath) {
+      window.dataLayer.push({
+        event: "pageview",
+        page_path: pagePath,
       });
     }
   }, [location]);
