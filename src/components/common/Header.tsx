@@ -14,9 +14,9 @@ const Header: React.FC = () => {
       sx={{
         display: "flex",
         justifyContent: "space-between",
-        alignItems: isMobile ? "start" : "center",
+        alignItems: "center",
         position: "absolute",
-        top: isMobile ? "5px" : "10px",
+        top: isMobile ? "0" : "10px",
         width: isMobile ? "95%" : "95%",
         padding: isMobile ? "10px" : "12px 18px",
         borderRadius: "8px",

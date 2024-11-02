@@ -5,15 +5,21 @@ import Reviews from "../components/common/Reviews";
 import Footer from "../components/common/Footer";
 import { Box } from "@mui/material";
 import useTrackPageView from "../hooks/useTrackPage";
+import Header from "../components/common/Header";
 
 const HomePage: React.FC = () => {
   useTrackPageView();
 
   return (
     <Box>
+      <div className="header-container">
+        <Header />
+      </div>
+
       <VideoPlayer
         src="/video/main.MP4"
         autoPlay={true}
+        videoOnly
         extra="FIRST IN NEW YORK"
       />
       <Banner />

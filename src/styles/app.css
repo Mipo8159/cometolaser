@@ -13,3 +13,20 @@ a {
   max-width: 1920px;
   overflow: hidden;
 }
+
+.header-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  height: 94px;
+  background-color: black;
+}
+
+@media (max-width: 776px) {
+  .header-container {
+    height: 110px;
+    display: flex;
+    justify-content: center;
+  }
+}
