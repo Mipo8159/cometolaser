@@ -3,46 +3,55 @@ import React from 'react';
 import { IMiscCard } from '../../interfaces/misc-card.interface';
 import MiscCard from '../cards/MiscCard';
 import UseMedia from '../../hooks/UseMedia';
+import { useLocation } from 'react-router-dom';
 
-const footerContacts: IMiscCard[] = [
-	{
-		id: 1,
-		initial: {
-			head: '1 (929) 603 - 7388',
-			mobile: true,
+const footerContacts = (exclude: boolean): IMiscCard[] => {
+	const contacts: IMiscCard[] = [
+		{
+			id: 1,
+			initial: {
+				head: '1 (929) 603 - 7388',
+				mobile: true,
+			},
+			body: {
+				head: 'ComeToLaser@gmail.com',
+				email: true,
+			},
 		},
-		body: {
-			head: 'ComeToLaser@gmail.com',
-			email: true,
+		{
+			id: 2,
+			initial: {
+				head: '1425 Kings Hwy, 3 STE',
+				mobile: false,
+			},
+			body: {
+				head: 'Brooklyn, NY 11229',
+				email: false,
+			},
 		},
-	},
-	{
-		id: 2,
-		initial: {
-			head: '1425 Kings Hwy, 3 STE',
-			mobile: false,
+		{
+			id: 3,
+			initial: {
+				head: 'Mon - Fri: 9am - 6pm',
+				mobile: false,
+			},
+			body: {
+				head: '​​Saturday: 9am - 6pm',
+				email: false,
+			},
+			extra: '​Sunday: Closed',
 		},
-		body: {
-			head: 'Brooklyn, NY 11229',
-			email: false,
-		},
-	},
-	{
-		id: 3,
-		initial: {
-			head: 'Mon - Fri: 9am - 6pm',
-			mobile: false,
-		},
-		body: {
-			head: '​​Saturday: 9am - 6pm',
-			email: false,
-		},
-		extra: '​Sunday: Closed',
-	},
-];
+	];
+
+	return exclude ? contacts.slice(2) : contacts;
+};
 
 const Footer: React.FC = () => {
 	const { isMobile, isTablet } = UseMedia();
+	const { pathname } = useLocation();
+	const excudeList = ['/reviews', '/contact'];
+	const isExcluded = excudeList.includes(pathname);
+
 	return (
 		<Box
 			display={'flex'}
@@ -88,15 +97,17 @@ const Footer: React.FC = () => {
 				alignItems={isMobile || isTablet ? 'center' : 'flex-start'}
 				justifyContent={'space-between'}
 				width={isMobile ? 'auto' : '100%'}>
-				{footerContacts.map(({ id, initial, body, extra }: IMiscCard, idx) => (
-					<MiscCard
-						key={id}
-						initial={initial}
-						body={body}
-						extra={extra}
-						mg={isMobile ? (idx % 2 === 0 ? 10 : -14) : 0}
-					/>
-				))}
+				{footerContacts(isExcluded).map(
+					({ id, initial, body, extra }: IMiscCard, idx) => (
+						<MiscCard
+							key={id}
+							initial={initial}
+							body={body}
+							extra={extra}
+							mg={isMobile ? (idx % 2 === 0 ? 10 : -14) : 0}
+						/>
+					)
+				)}
 			</Box>
 		</Box>
 	);
